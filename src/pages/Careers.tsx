@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
+import careerImg from '../assets/career.jpg';
 
 const Careers = () => {
   return (
@@ -10,41 +11,49 @@ const Careers = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-12"
+            className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight mb-12"
           >
-            Careers
+            
           </motion.h1>
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center  mx-auto">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className=" rounded-[3rem] "
+              className="text-left"
             >
               
-              <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight">
+              <h2 className="text-3xl md:text-5xl font-normal text-slate-900 mb-8 tracking-tight">
                 Join Our Team
               </h2>
               
-              <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12 max-w-2xl mx-auto">
+              <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12">
                 REALITEZA is always looking for exceptional experts to join our global team.
               </p>
 
               <div className="pt-5 ">
-                <p className="text-[12px] font-bold text-slate-800 uppercase tracking-[0.3em] mb-4">
+                <p className="text-md font-medium text-slate-800  mb-4">
                   Submit your CV & Portfolio for Consideration
                 </p>
                 <a 
                   href="mailto:contact@realiteza.com" 
-                  className="text-2xl md:text-4xl font-black text-primary hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-4 group"
+                  className="text-2xl font-medium text-primary hover:text-slate-900 transition-all duration-300 flex items-center justify-start gap-4 group"
                 >
-                  <Mail size={32} className="text-primary group-hover:scale-110 transition-transform" />
+                  <Mail size={24} className="text-primary group-hover:scale-110 transition-transform" />
                   contact@realiteza.com
                 </a>
               </div>
             </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <img src={careerImg} alt="Careers at REALITEZA" className="w-full h-auto object-cover rounded-lg shadow-sm" />
+            </motion.div>
           </div>
+
         </div>
       </section>
     </div>

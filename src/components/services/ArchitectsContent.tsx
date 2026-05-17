@@ -28,7 +28,7 @@ const ArchitectsContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
         <div className="space-y-8 order-2 lg:order-1">
           <h2 className="mb-8 leading-tight">
-            <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight leading-[1.1]">Services to Architects & Consultants</span>
+            <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight leading-[1.1]">Services to Architects & Consultants</span>
           </h2>
           <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6">
             "We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective."

@@ -2,14 +2,30 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const fullName = formData.get('fullName');
+    const email = formData.get('email');
+    const company = formData.get('company');
+    const category = formData.get('category');
+    const message = formData.get('message');
+
+    const subject = encodeURIComponent(`Service Enquiry from ${fullName} - ${company}`);
+    const body = encodeURIComponent(
+      `Name: ${fullName}\nEmail: ${email}\nCompany: ${company}\nCategory: ${category}\n\nProject Brief:\n${message}`
+    );
+
+    window.location.href = `mailto:contact@realiteza.com?subject=${subject}&body=${body}`;
+  };
+
   const offices = [
     {
       title: 'Engineering Operations – Cochin, India',
-      address: '37/1993, 8th Floor, Infafutura Building, Kakkanad, Thrikkakara, Cochin – 682021',
+      address: '37/1993, 8th Floor, Infrafutura Building, Kakkanad, Thrikkakara, Cochin – 682021',
       email: 'contact@realiteza.com',
       phone: '+91 9447460468',
-      hours: '09:00 AM – 06:00 PM (Closed on Public Holidays)',
-      whatsapp: '919447460468'
+      hours: '09:00 AM – 06:00 PM (Closed on Public Holidays)'
     },
     {
       title: 'Marketing – Europe, UK',
@@ -35,7 +51,7 @@ const Contact = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-12"
+            className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight mb-12"
           >
             Contact Us
           </motion.h1>
@@ -72,7 +88,7 @@ const Contact = () => {
                         <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="hover:text-primary transition-colors">{office.phone}</a>
                       </div>
                     )}
-                    {office.whatsapp && (
+                    {/* {office.whatsapp && (
                       <div className="flex items-center gap-3 text-slate-900 font-bold group/wa">
                         <div className="text-[#25D366] shrink-0">
                           <svg
@@ -94,7 +110,7 @@ const Contact = () => {
                           WhatsApp Support
                         </a>
                       </div>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </motion.div>
@@ -106,24 +122,23 @@ const Contact = () => {
       {/* Lite Corporate Enquiry Section */}
       <section className="py-16 md:py-28  bg-slate-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-              Technical Project Enquiry
+          <div className="max-w-5xl mx-auto text-left mb-10">
+            <h2 className="text-2xl md:text-5xl lg:text-5xl font-normal text-slate-900 mb-2 tracking-tight">
+              Service Enquiry
             </h2>
 
-            <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed">
-              Submit your project specifications and our engineering leads will provide a tailored technical proposal within 24 hours.
-            </p>
           </div>
 
           <div className="max-w-5xl mx-auto">
             <div className="bg-white  overflow-hidden">
               <div className="p-4 md:p-8">
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Full Name</label>
                     <input
                       type="text"
+                      name="fullName"
+                      required
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900"
                       placeholder="e.g. Michael Chen"
                     />
@@ -132,6 +147,8 @@ const Contact = () => {
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Professional Email</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900"
                       placeholder="m.chen@architecture.com"
                     />
@@ -140,18 +157,20 @@ const Contact = () => {
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Company / Organization</label>
                     <input
                       type="text"
+                      name="company"
+                      required
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900"
                       placeholder="Organization Name"
                     />
                   </div>
                   <div className="space-y-3">
-                    <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Project Stream</label>
+                    <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Client Category</label>
                     <div className="relative">
-                      <select className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 appearance-none cursor-pointer">
-                        <option>Facade Engineering</option>
-                        <option>BIM / Tekla Modeling</option>
-                        <option>Fabrication Support</option>
-                        <option>Structural Analysis</option>
+                      <select name="category" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 appearance-none cursor-pointer">
+                        <option>Developers</option>
+                        <option>Architects & Consultants</option>
+                        <option>Main Contractors</option>
+                        <option>Facade Fabricators</option>
                       </select>
                       <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
                         <ArrowRight size={18} className="rotate-90" />
@@ -162,6 +181,8 @@ const Contact = () => {
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Project Brief & Technical Requirements</label>
                     <textarea
                       rows={3}
+                      name="message"
+                      required
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 resize-none"
                       placeholder="Tell us about the project scope, location, and specific technical needs..."
                     ></textarea>

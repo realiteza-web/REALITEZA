@@ -59,7 +59,7 @@ const FabricatorsContent = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
           <div className="space-y-8 order-2 lg:order-1">
             <h2 className="mb-8 leading-tight">
-              <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight leading-[1.1]">Services to Facade Fabricators</span>
+              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight leading-[1.1]">Services to Facade Fabricators</span>
             </h2>
             <p className="sm:text-xl text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6">
               "We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub."
@@ -189,7 +189,7 @@ const FabricatorsContent = () => {
       <section className="py-16 md:py-24 bg-slate-100 overflow-hidden relative">
         <div className="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
           <div className="text-center md:mb-16 mb-8">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tighter">Services</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tighter">Services</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -220,7 +220,7 @@ const FabricatorsContent = () => {
       <section className="relative py-16 sm:py-24 bg-white border-t border-slate-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="mb-16">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6  tracking-tight">Our Technical Portfolio</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 mb-6  tracking-tight">Our Technical Portfolio</h2>
             <p className="text-slate-500 sm:text-xl font-medium max-w-2xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
           </div>
 

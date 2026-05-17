@@ -8,9 +8,8 @@ import endClient6 from '../assets/clients/endclients (6).jpg';
 
 import endClient8 from '../assets/clients/endclients (8).jpg';
 import endClient9 from '../assets/clients/endclients (9).jpg';
-import endClient10 from '../assets/clients/endclients (10).jpeg';
 
-const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient8, endClient9, endClient10];
+const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient8, endClient9];
 
 const EndClientSlider: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,11 +24,11 @@ const EndClientSlider: React.FC = () => {
   }, []);
 
   return (
-    <section className="sm:py-24 py-16 overflow-hidden ">
+    <section className="sm:py-10 py-8 overflow-hidden ">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mb-8">
         <div className="sm:text-center  max-w-3xl mx-auto">
           
-          <h2 className="text-2xl uppercase font-bold text-slate-900 tracking-tight mb-6">
+          <h2 className="text-2xl  font-medium text-slate-900 tracking-tight mb-6">
             End Clients & Associated Projects
           </h2>
           

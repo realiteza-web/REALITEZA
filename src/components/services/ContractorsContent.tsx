@@ -48,7 +48,7 @@ const ContractorsContent = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
         <div className="space-y-8">
           <h2 className="mb-8 leading-tight">
-            <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight">Services to Main Contractors</span>
+            <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight">Services to Main Contractors</span>
           </h2>
           <div className="space-y-6">
             <h3 className="text-xl md:text-2xl font-black text-primary uppercase tracking-widest">1. FAÇADE COORDINATION PARTNER</h3>

@@ -81,7 +81,7 @@ const Footer = () => {
                 <div className="p-2.5 bg-white/5 rounded-full flex items-center justify-center border border-white/10 group-hover:bg-white/10 transition-all duration-300">
                   <MapPin size={18} className="text-white" />
                 </div>
-                <span className="text-sm text-slate-300">Kakkanad, Cochin, India</span>
+                <span className="text-sm text-slate-300">37/1993, 8th Floor, Infrafutura Building, Kakkanad, Thrikkakara, Cochin – 682021</span>
               </li>
             </ul>
           </div>

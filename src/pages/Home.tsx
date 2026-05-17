@@ -103,7 +103,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="sm:mb-6 mb-4 leading-tight"
             >
-              <span className="text-2xl md:text-4xl lg:text-5xl font-bold block text-slate-900 tracking-tight">
+              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-[.1px]">
                 Why Choose REALITEZA
               </span>
               <p className='mt-6 text-lg font-normal max-w-5xl mx-auto text-slate-600 leading-relaxed text-center'>
@@ -147,45 +147,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-
-
-
-
-      {/* CTA Section - Beautified with Background */}
-      {/* <section className="relative py-16 md:py-28 bg-primary overflow-hidden">
-        <div className="container mx-auto px-6 md:px-12 lg:px-20 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-black sm:mb-10 mb-6 leading-tight tracking-tight text-slate-900">
-              Ready to elevate your <br />
-              <span className="text-white/80">Next engineering project?</span>
-            </h2>
-            <p className="text-white/90 text-lg mb-12 max-w-2xl mx-auto font-medium">
-              Our technical experts are ready to translate your architectural vision into buildable, high-performance reality.
-            </p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Link to="/contact" className="btn-white text-lg">
-                Let's Discuss Your Requirements <ArrowRight size={22} />
-              </Link>
-            </motion.div>
-
-
-            
-          </motion.div>
-        </div>
-      </section> */}
-
-
 
 
 
