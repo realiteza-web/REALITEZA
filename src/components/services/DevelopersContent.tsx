@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import devIllustration from '../../assets/services/developers_oversight.png';
+import devIllustration from '../../assets/services/developers_oversight.jpeg';
 
 const DevelopersContent = () => {
   const developersServices = [

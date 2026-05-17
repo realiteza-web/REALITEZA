@@ -115,11 +115,23 @@ const Home = () => {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              "Comprehensive Risk Mitigation: The facade is often the highest-risk, highest-cost package on any project. We provide the authoritative oversight necessary to eliminate that risk, ensuring your building is secure, compliant, and built to last.",
-              "Our intelligent material optimization, exact quantity forecasting, and value engineering drastically reduce waste and prevent costly procurement shortages.",
-              "End-to-End Coordination: We serve as your dedicated technical authority. By managing the critical transition between the primary building structure and the facade envelope, we ensure a perfect, weather-tight fit every single time.",
-              "Unwavering Financial Certainty: Construction is inherently unpredictable, but your envelope budget shouldn't be. Our proactive, systems-driven approach identifies risks early, eliminating hidden costs, material waste, and the threat of expensive on-site rework."
-            ].map((text, index) => (
+              {
+                title: "Comprehensive Risk Mitigation",
+                description: "The facade is often the highest-risk, highest-cost package on any project. We provide the authoritative oversight necessary to eliminate that risk, ensuring your building is secure, compliant, and built to last."
+              },
+              {
+                title: "Material Optimization",
+                description: "Our intelligent material optimization, exact quantity forecasting, and value engineering drastically reduce waste and prevent costly procurement shortages."
+              },
+              {
+                title: "End-to-End Coordination",
+                description: "We serve as your dedicated technical authority. By managing the critical transition between the primary building structure and the facade envelope, we ensure a perfect, weather-tight fit every single time."
+              },
+              {
+                title: "Unwavering Financial Certainty",
+                description: "Construction is inherently unpredictable, but your envelope budget shouldn't be. Our proactive, systems-driven approach identifies risks early, eliminating hidden costs, material waste, and the threat of expensive on-site rework."
+              }
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -128,7 +140,8 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-4 sm:p-6 border border-slate-200"
               >
-                <p className="text-slate-600 leading-relaxed text-md md:text-lg">{text}</p>
+                <h3 className="font-bold text-slate-900 mb-2 uppercase tracking-tight text-sm md:text-base">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed text-md md:text-lg">{item.description}</p>
               </motion.div>
             ))}
           </div>

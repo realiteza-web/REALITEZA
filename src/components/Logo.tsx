@@ -18,7 +18,7 @@ const Logo: React.FC<{ className?: string; isDark?: boolean }> = ({ className = 
         stroke={color}
         strokeWidth="1.5"
         style={{
-          fontFamily: "'Indigo Outline', 'Montserrat', sans-serif",
+          fontFamily: "'Indigo Outline', 'DM Sans', sans-serif",
           fontSize: "78px",
           fontWeight: "800",
           letterSpacing: "1px"
@@ -37,7 +37,7 @@ const Logo: React.FC<{ className?: string; isDark?: boolean }> = ({ className = 
         y="110"
         fill={color}
         style={{
-          fontFamily: "'Montserrat', sans-serif",
+          fontFamily: "'DM Sans', sans-serif",
           fontSize: "18px",
           fontWeight: "800",
           letterSpacing: "1.5px"

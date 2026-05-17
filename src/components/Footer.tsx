@@ -15,7 +15,7 @@ const Footer = () => {
               <img src={logoImg} alt="REALITEZA Logo" className="h-12 w-auto object-contain" />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
-              REALITEZA provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, and structural design support globally.
+              REALITEZA delivers specialized building envelope engineering for complex projects worldwide through rigorous structural analysis, fabrication-ready shop drawings, and agile digital coordination. Operating across regional business hours, we provide technically precise, workability-focused façade engineering solutions with seamless global collaboration.
             </p>
             <div className="flex items-center gap-4">
               <a href="https://www.linkedin.com/company/realiteza/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">

@@ -8,8 +8,9 @@ import endClient6 from '../assets/clients/endclients (6).jpg';
 
 import endClient8 from '../assets/clients/endclients (8).jpg';
 import endClient9 from '../assets/clients/endclients (9).jpg';
+import endClient10 from '../assets/clients/endclients (10).jpeg';
 
-const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient8, endClient9];
+const endClients = [endClient1, endClient2, endClient3, endClient4, endClient5, endClient6, endClient8, endClient9, endClient10];
 
 const EndClientSlider: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -42,7 +43,7 @@ const EndClientSlider: React.FC = () => {
           style={{ animationDuration: isMobile ? '5s' : '12s' }}
         >
           {[...endClients, ...endClients, ...endClients].map((clientImg, i) => (
-            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-100 flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-md group">
+            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-200 flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-md group p-2">
               <img src={clientImg} alt={`End Client ${i + 1}`} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
             </div>
           ))}
