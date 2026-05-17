@@ -113,7 +113,7 @@ const Home = () => {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 title: "Comprehensive Risk Mitigation",
@@ -140,7 +140,7 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="bg-white p-4 sm:p-6 border border-slate-200"
               >
-                <h3 className="font-bold text-slate-900 mb-2 uppercase tracking-tight text-sm md:text-base">{item.title}</h3>
+                <h3 className="font-bold text-slate-900 mb-4 uppercase tracking-tight text-sm md:text-base">{item.title}</h3>
                 <p className="text-slate-600 leading-relaxed text-md md:text-lg">{item.description}</p>
               </motion.div>
             ))}
