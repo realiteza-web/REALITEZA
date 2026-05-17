@@ -35,9 +35,9 @@ const About = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="lg:col-span-1 relative"
+              className="lg:col-span-1 relative flex justify-center"
             >
-              <img src={aboutImg} alt="REALITEZA Company Overview" className="max-w-[280px] w-full h-auto mx-auto lg:ml-auto lg:mr-0" />
+              <img src={aboutImg} alt="REALITEZA Company Overview" className="max-w-[280px] w-full h-auto mx-auto" />
             </motion.div>
           </div>
 
@@ -57,7 +57,7 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-xl font-normal text-slate-900 tracking-tight">Our Mission</h2>
+              <h2 className="text-xl font-medium text-slate-900 tracking-tight">Our Mission</h2>
               <p className="sm:text-xl text-lg leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
                 "To be the leader and our clients' most preferable choice in providing engineering design service."
               </p>
@@ -71,7 +71,7 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-xl font-normal text-slate-900 tracking-tight">Our Vision</h2>
+              <h2 className="text-xl font-medium text-slate-900 tracking-tight">Our Vision</h2>
               <p className="sm:text-xl text-lg leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
                 "We are committed to maintaining high-quality drawing standards and high-end engineered building envelope solutions."
               </p>
