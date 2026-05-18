@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import archIllustration from '../../assets/services/architects_bridge.png';
 
 const ArchitectsContent = () => {
   const architectsServices = [
@@ -24,19 +23,17 @@ const ArchitectsContent = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-16 space-y-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
-        <div className="space-y-8 order-2 lg:order-1">
-          <h2 className="mb-8 leading-tight">
-            <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight leading-[1.1]">Services to Architects & Consultants</span>
-          </h2>
-          <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6">
-            "We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective."
-          </p>
-        </div>
-        <div className="order-1 lg:order-2">
-          <img src={archIllustration} alt="Architectural Engineering Illustration" className="w-full h-auto max-h-[500px] object-contain " />
-        </div>
+    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-6 space-y-4">
+      <div className="text-left">
+        <h2 className="leading-tight">
+          <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight leading-[1.1]">Services to Architects & Consultants</span>
+        </h2>
+      </div>
+
+      <div className="max-w-5xl text-left">
+        <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-normal">
+          We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective.
+        </p>
       </div>
 
       <div>

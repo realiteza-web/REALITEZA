@@ -14,10 +14,7 @@ interface ServiceAccordionProps {
 const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  // Split items into two columns
-  const midPoint = Math.ceil(items.length / 2);
-  const leftItems = items.slice(0, midPoint);
-  const rightItems = items.slice(midPoint);
+
 
   const renderItem = (item: AccordionItem, globalIndex: number) => (
     <div 
@@ -61,13 +58,8 @@ const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
   );
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 w-full items-start">
-      <div className="flex flex-col">
-        {leftItems.map((item, index) => renderItem(item, index))}
-      </div>
-      <div className="flex flex-col">
-        {rightItems.map((item, index) => renderItem(item, index + midPoint))}
-      </div>
+    <div className="flex flex-col w-full">
+      {items.map((item, index) => renderItem(item, index))}
     </div>
   );
 };

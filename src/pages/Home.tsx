@@ -103,7 +103,7 @@ const Home = () => {
               viewport={{ once: true }}
               className="sm:mb-6 mb-4 leading-tight"
             >
-              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-[.1px]">
+              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight">
                 Why Choose REALITEZA
               </span>
               <p className='mt-6 text-lg font-normal max-w-5xl mx-auto text-slate-600 leading-relaxed text-center'>

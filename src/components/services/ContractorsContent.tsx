@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ServiceAccordion from './ServiceAccordion';
-import contractorIllustration from '../../assets/services/contractors_execution.png';
 
 const ContractorsContent = () => {
+  const [activeTab, setActiveTab] = useState('facade');
   const facadeServices = [
     {
       title: "Interface Management & Tolerance Control",
@@ -43,39 +45,77 @@ const ContractorsContent = () => {
   ];
 
   return (
-    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-24 space-y-12">
+    <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-6 space-y-4">
       {/* Header Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
-        <div className="space-y-8">
-          <h2 className="mb-8 leading-tight">
-            <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight">Services to Main Contractors</span>
-          </h2>
-          <div className="space-y-6">
-            <h3 className="text-xl md:text-2xl font-black text-primary uppercase tracking-widest">1. FAÇADE COORDINATION PARTNER</h3>
-            <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6">
-              As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination between the primary structure and the facade, eliminating installation delays, and guaranteeing strict quality control.
-            </p>
-          </div>
-        </div>
-        <div>
-          <img src={contractorIllustration} alt="Technical Execution Illustration" className="w-full h-auto max-h-[500px] object-contain" />
-        </div>
+      <div className="text-left">
+        <h2 className="leading-tight">
+          <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight">Services to Main Contractors</span>
+        </h2>
       </div>
 
-      {/* Facade Accordion */}
-      <div className="sm:space-y-12 space-y-4">
-        <ServiceAccordion items={facadeServices} />
+      {/* Horizontal Tabs */}
+      <div className="flex flex-col sm:flex-row justify-start items-center gap-4 border-b border-slate-200 pb-4 pt-2">
+        <button
+          onClick={() => setActiveTab('facade')}
+          className={`px-6 py-3 font-bold text-sm md:text-base uppercase tracking-widest transition-all ${
+            activeTab === 'facade' 
+              ? 'bg-slate-900 text-white rounded-lg shadow-md' 
+              : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg'
+          }`}
+        >
+          FAÇADE COORDINATION PARTNER
+        </button>
+        <button
+          onClick={() => setActiveTab('structural')}
+          className={`px-6 py-3 font-bold text-sm md:text-base uppercase tracking-widest transition-all ${
+            activeTab === 'structural' 
+              ? 'bg-slate-900 text-white rounded-lg shadow-md' 
+              : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg'
+          }`}
+        >
+          STRUCTURAL STEEL ENGINEERING
+        </button>
       </div>
 
-      {/* Structural Steel Section */}
-      <div className="sm:space-y-12 space-y-4">
-        <div className="max-w-3xl">
-          <h3 className="text-xl md:text-2xl font-black text-primary uppercase tracking-widest mb-6">2. STRUCTURAL STEEL ENGINEERING</h3>
-          <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6 ">
-            Ensuring financial predictability and absolute structural integrity through exact BIM-integrated engineering and certified connection design.
-          </p>
-        </div>
-        <ServiceAccordion items={structuralServices} />
+      {/* Tab Content */}
+      <div className="min-h-[500px]">
+        <AnimatePresence mode="wait">
+          {activeTab === 'facade' && (
+            <motion.div
+              key="facade"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="space-y-12"
+            >
+              <div className="max-w-5xl text-left mt-2">
+                <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-normal">
+                  As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination between the primary structure and the facade, eliminating installation delays, and guaranteeing strict quality control.
+                </p>
+              </div>
+              <ServiceAccordion items={facadeServices} />
+            </motion.div>
+          )}
+
+          {activeTab === 'structural' && (
+            <motion.div
+              key="structural"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="space-y-12"
+            >
+              <div className="max-w-5xl text-left mt-2">
+                <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-normal">
+                  Ensuring financial predictability and absolute structural integrity through exact BIM-integrated engineering and certified connection design.
+                </p>
+              </div>
+              <ServiceAccordion items={structuralServices} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <div className="flex justify-center ">

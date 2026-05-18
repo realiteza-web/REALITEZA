@@ -5,7 +5,6 @@ import {
   ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import fabricatorIllustration from '../../assets/services/fabricators_integration.png';
 import fabricationPackageImg from '../../assets/services/fabrication_package.png';
 import siteExecutionImg from '../../assets/services/site_execution.png';
 
@@ -54,23 +53,21 @@ const FabricatorsContent = () => {
   ];
 
   return (
-    <div className="sm:space-y-16 space-y-8">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-8 items-center">
-          <div className="space-y-8 order-2 lg:order-1">
-            <h2 className="mb-8 leading-tight">
-              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight leading-[1.1]">Services to Facade Fabricators</span>
-            </h2>
-            <p className="sm:text-xl text-slate-600 leading-relaxed font-medium border-l-4 border-primary pl-6">
-              "We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub."
-            </p>
-          </div>
-          <div className="order-1 lg:order-2">
-            <img src={fabricatorIllustration} alt="Technical Integration Illustration" className="w-full h-auto max-h-[500px] object-contain" />
-          </div>
+    <div className="sm:space-y-16 space-y-6">
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 sm:space-y-6 space-y-4">
+        <div className="text-left">
+          <h2 className="leading-tight">
+            <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight leading-[1.1]">Services to Facade Fabricators</span>
+          </h2>
         </div>
 
-        <div className="mt-16">
+        <div className="max-w-5xl text-left">
+          <p className="sm:text-xl text-slate-600 leading-relaxed font-normal">
+            We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub.
+          </p>
+        </div>
+
+        <div>
           <ServiceAccordion items={[
             {
               title: "Tender Estimation & Quantity Surveying (QS)",
@@ -113,7 +110,7 @@ const FabricatorsContent = () => {
       </div>
 
       {/* Fabrication & Material Optimization Section - FULL WIDTH */}
-      <div className="py-16 md:py-24 bg-slate-100 ">
+      <div className="py-10 md:py-18 bg-slate-100 ">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2 space-y-12">
@@ -152,8 +149,8 @@ const FabricatorsContent = () => {
         </div>
       </div>
 
-      {/* Site Execution Section */}
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 py-10 md:py-24">
+      {/* Site Execution Section  py-10 md:py-18 */}
+      <div className="container mx-auto px-6 md:px-12 lg:px-20 ">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
           <div className="w-full lg:w-1/2 space-y-8">
             <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
@@ -171,7 +168,7 @@ const FabricatorsContent = () => {
               ].map((item, i) => (
                 <div key={i} className="border-l-2 border-primary/20 pl-6 hover:border-primary transition-colors">
                   <h4 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-1">{item.title}</h4>
-                  <p className="text-slate-500 text-sm">{item.desc}</p>
+                  <p className="text-slate-500 text-md">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -186,7 +183,7 @@ const FabricatorsContent = () => {
       </div>
 
       {/* Special Services Section */}
-      <section className="py-16 md:py-24 bg-slate-100 overflow-hidden relative">
+      <section className="py-10 md:py-18 bg-slate-100 overflow-hidden relative">
         <div className="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
           <div className="text-center md:mb-16 mb-8">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tighter">Services</h2>
@@ -216,12 +213,12 @@ const FabricatorsContent = () => {
         </div>
       </section>
 
-      {/* Interactive Project List Section */}
-      <section className="relative py-16 sm:py-24 bg-white border-t border-slate-100">
+      {/* Interactive Project List Section py-10 sm:py-18 */}
+      <section className="relative  bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="mb-16">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 mb-6  tracking-tight">Our Technical Portfolio</h2>
-            <p className="text-slate-500 sm:text-xl font-medium max-w-2xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
+            <p className="text-slate-500 sm:text-xl font-normal max-w-5xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
           </div>
 
           {/* Desktop View (>= 1024px): Interactive Slideshow */}
