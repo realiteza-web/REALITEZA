@@ -1,22 +1,44 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
     const formData = new FormData(e.currentTarget);
-    const fullName = formData.get('fullName');
-    const email = formData.get('email');
-    const company = formData.get('company');
-    const category = formData.get('category');
-    const message = formData.get('message');
+    const data = Object.fromEntries(formData.entries());
 
-    const subject = encodeURIComponent(`Service Enquiry from ${fullName} - ${company}`);
-    const body = encodeURIComponent(
-      `Name: ${fullName}\nEmail: ${email}\nCompany: ${company}\nCategory: ${category}\n\nProject Brief:\n${message}`
-    );
+    // Add FormSubmit specific fields
+    data['_subject'] = `New Service Enquiry from ${data.fullName} - ${data.company}`;
+    data['_template'] = 'table';
 
-    window.location.href = `mailto:contact@realiteza.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/contact@realiteza.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const offices = [
@@ -187,16 +209,36 @@ const Contact = () => {
                       placeholder="Tell us about the project scope, location, and specific technical needs..."
                     ></textarea>
                   </div>
-                  <div className="md:col-span-2 flex justify-left pt-4">
+                  <div className="md:col-span-2 flex flex-col items-start gap-4 pt-4">
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                     >
-                      <button type="submit" className="btn-primary text-md">
-                        Send Enquiry <ArrowRight size={22} />
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className={`btn-primary text-md ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                      >
+                        {isSubmitting ? 'Sending...' : (
+                          <div className="flex items-center gap-2">Send Enquiry <ArrowRight size={22} /></div>
+                        )}
                       </button>
                     </motion.div>
+
+                    {submitStatus === 'success' && (
+                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 text-green-600 font-bold bg-green-50 px-4 py-3 rounded-lg border border-green-200">
+                        <CheckCircle2 size={20} />
+                        <p>Thank you! Your enquiry has been sent successfully.</p>
+                      </motion.div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 text-red-600 font-bold bg-red-50 px-4 py-3 rounded-lg border border-red-200">
+                        <XCircle size={20} />
+                        <p>Oops! Something went wrong. Please try again or email us directly.</p>
+                      </motion.div>
+                    )}
                   </div>
                 </form>
               </div>

@@ -64,7 +64,7 @@ const Projects = () => {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-12"
+            className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tight mb-12"
           >
             Recent Projects
           </motion.h1>
