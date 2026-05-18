@@ -164,7 +164,7 @@ const Services = () => {
       </section>
 
       {/* Tabbed Content Area */}
-      <section className="pt-10 sm:pt-16 pb-24 lg:pb-24 bg-white min-h-[400px]">
+      <section className="pt-10 sm:pt-16 pb-12 sm:pb-16 bg-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

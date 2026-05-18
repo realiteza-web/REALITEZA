@@ -41,7 +41,7 @@ const ArchitectsContent = () => {
       </div>
 
       <div className="flex justify-center pt-8">
-        <Link to="/contact" className="btn-primary text-md font-bold">
+        <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold">
           REQUEST A SCHEMATIC PROPOSAL <ArrowRight />
         </Link>
       </div>

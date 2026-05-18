@@ -54,31 +54,55 @@ const ContractorsContent = () => {
       </div>
 
       {/* Horizontal Tabs */}
-      <div className="flex flex-col sm:flex-row justify-start items-center gap-4 border-b border-slate-200 pb-4 pt-2">
+      <div className="flex flex-col sm:flex-row justify-start items-end gap-2 border-b border-slate-200 mt-8 mb-4">
         <button
           onClick={() => setActiveTab('facade')}
-          className={`px-6 py-3 font-bold text-sm md:text-base uppercase tracking-widest transition-all ${
+          className={`flex items-center px-6 py-3.5 font-bold text-sm md:text-base uppercase tracking-widest transition-all rounded-t-xl border-t border-l border-r -mb-[1px] ${
             activeTab === 'facade' 
-              ? 'bg-slate-900 text-white rounded-lg shadow-md' 
-              : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg'
+              ? 'bg-white text-slate-900 border-slate-200' 
+              : 'bg-slate-100 text-slate-500 border-transparent hover:bg-slate-200 hover:text-slate-900'
           }`}
         >
+          <AnimatePresence>
+            {activeTab === 'facade' && (
+              <motion.div
+                initial={{ width: 0, opacity: 0, marginRight: 0 }}
+                animate={{ width: "auto", opacity: 1, marginRight: 8 }}
+                exit={{ width: 0, opacity: 0, marginRight: 0 }}
+                className="overflow-hidden flex items-center"
+              >
+                <ArrowRight size={18} strokeWidth={2.5} />
+              </motion.div>
+            )}
+          </AnimatePresence>
           FAÇADE COORDINATION PARTNER
         </button>
         <button
           onClick={() => setActiveTab('structural')}
-          className={`px-6 py-3 font-bold text-sm md:text-base uppercase tracking-widest transition-all ${
+          className={`flex items-center px-6 py-3.5 font-bold text-sm md:text-base uppercase tracking-widest transition-all rounded-t-xl border-t border-l border-r -mb-[1px] ${
             activeTab === 'structural' 
-              ? 'bg-slate-900 text-white rounded-lg shadow-md' 
-              : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg'
+              ? 'bg-white text-slate-900 border-slate-200' 
+              : 'bg-slate-100 text-slate-500 border-transparent hover:bg-slate-200 hover:text-slate-900'
           }`}
         >
+          <AnimatePresence>
+            {activeTab === 'structural' && (
+              <motion.div
+                initial={{ width: 0, opacity: 0, marginRight: 0 }}
+                animate={{ width: "auto", opacity: 1, marginRight: 8 }}
+                exit={{ width: 0, opacity: 0, marginRight: 0 }}
+                className="overflow-hidden flex items-center"
+              >
+                <ArrowRight size={18} strokeWidth={2.5} />
+              </motion.div>
+            )}
+          </AnimatePresence>
           STRUCTURAL STEEL ENGINEERING
         </button>
       </div>
 
       {/* Tab Content */}
-      <div className="min-h-[500px]">
+      <div>
         <AnimatePresence mode="wait">
           {activeTab === 'facade' && (
             <motion.div
@@ -118,9 +142,9 @@ const ContractorsContent = () => {
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center ">
-        <Link to="/contact" className="btn-primary text-md font-bold">
-          HIRE YOUR FACADE SUPPORT <ArrowRight />
+      <div className="flex justify-center mt-12 mb-8">
+        <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold">
+          ENGAGE TECHNICAL OVERSIGHT <ArrowRight />
         </Link>
       </div>
     </div>

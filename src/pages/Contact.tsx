@@ -1,8 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 
 const Contact = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === '#enquiry-form') {
+      setTimeout(() => {
+        const element = document.getElementById('enquiry-form');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          const nameField = document.querySelector('input[name="fullName"]');
+          if (nameField) {
+            (nameField as HTMLInputElement).focus();
+          }
+        }
+      }, 100);
+    }
+  }, [location]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -142,7 +159,7 @@ const Contact = () => {
       </section>
 
       {/* Lite Corporate Enquiry Section */}
-      <section className="py-16 md:py-28  bg-slate-100">
+      <section id="enquiry-form" className="py-16 md:py-28  bg-slate-100">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="max-w-5xl mx-auto text-left mb-10">
             <h2 className="text-2xl md:text-5xl lg:text-5xl font-normal text-slate-900 mb-2 tracking-tight">

@@ -339,7 +339,7 @@ const FabricatorsContent = () => {
 
       <div className="container mx-auto px-1">
         <div className="flex justify-center">
-          <Link to="/contact" className="btn-primary  text-md font-bold">
+          <Link to="/contact#enquiry-form" className="btn-primary  text-md font-bold">
             GET ONE-POINT SUPPORT <ArrowRight />
           </Link>
         </div>

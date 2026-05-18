@@ -41,7 +41,7 @@ const DevelopersContent = () => {
       </div>
 
       <div className="flex justify-center">
-        <Link to="/contact" className="btn-primary text-md font-bold">
+        <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold">
           Engage Engineering Oversight<ArrowRight />
         </Link>
       </div>
