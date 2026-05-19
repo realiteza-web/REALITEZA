@@ -214,6 +214,8 @@ const Contact = () => {
                       type="email"
                       name="email"
                       required
+                      pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                      title="Please enter a valid email address"
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900"
                       placeholder="m.chen@architecture.com"
                     />
@@ -259,8 +261,8 @@ const Contact = () => {
                         type="tel"
                         name="phone"
                         required
-                        pattern="^[0-9\-\+\s\(\)]{6,20}$"
-                        title="Please enter a valid phone number"
+                        pattern="^[0-9\s]{5,15}$"
+                        title="Please enter a valid phone number (digits only)"
                         className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 flex-grow"
                         placeholder="e.g. 50 123 4567"
                       />
@@ -271,8 +273,6 @@ const Contact = () => {
                     <textarea
                       rows={3}
                       name="message"
-                      required
-                      minLength={10}
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 resize-none"
                       placeholder="Tell us about the project scope, location, and specific technical needs..."
                     ></textarea>
