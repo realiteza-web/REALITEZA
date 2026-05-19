@@ -31,12 +31,13 @@ const Contact = () => {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
-    // Add FormSubmit specific fields
-    data['_subject'] = `New Service Enquiry from ${data.fullName} - ${data.company}`;
-    data['_template'] = 'table';
+    // Web3Forms configuration
+    data['access_key'] = 'd076f7dc-d6fb-4720-9b53-4bef2ad8db73';
+    data['subject'] = `New Service Enquiry from ${data.fullName} - ${data.company}`;
+    data['from_name'] = data.fullName as string;
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/contact@realiteza.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -171,7 +172,7 @@ const Contact = () => {
           <div className="max-w-5xl mx-auto">
             <div className="bg-white  overflow-hidden">
               <div className="p-4 md:p-8">
-                <form action="https://formsubmit.co/contact@realiteza.com" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Full Name</label>
                     <input
