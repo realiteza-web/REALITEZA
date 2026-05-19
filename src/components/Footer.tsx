@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <footer className="bg-[#1F487C] text-slate-300 pt-16 md:pb-8 pb-32">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
           {/* Company Info */}
-          <div className="space-y-6">
+          <div className="space-y-6 lg:col-span-2 lg:pr-8">
             <Link to="/" className="inline-block">
               <img src={logoImg} alt="REALITEZA Logo" className="h-12 w-auto object-contain" />
             </Link>
-            <p className="text-sm leading-relaxed max-w-xs">
+            <p className="text-sm leading-relaxed max-w-md">
               REALITEZA delivers specialized building envelope engineering for complex projects worldwide through rigorous structural analysis, fabrication-ready shop drawings, and agile digital coordination. Operating across regional business hours, we provide technically precise, workability-focused façade engineering solutions with seamless global collaboration.
             </p>
             <div className="flex items-center gap-4">
