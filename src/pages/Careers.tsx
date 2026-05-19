@@ -15,12 +15,12 @@ const Careers = () => {
           >
             
           </motion.h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center  mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch mx-auto">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-left"
+              className="text-left flex flex-col justify-center py-4"
             >
               
               <h2 className="text-3xl md:text-5xl font-normal text-slate-900 mb-8 tracking-tight">
@@ -49,8 +49,15 @@ const Careers = () => {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
+              className="relative w-full h-full min-h-[300px] lg:min-h-full rounded-2xl overflow-hidden"
             >
-              <img src={careerImg} alt="Careers at REALITEZA" className="w-full h-auto object-cover rounded-lg shadow-sm" />
+              <img 
+                src={careerImg} 
+                alt="Careers at REALITEZA" 
+                className="absolute inset-0 w-full h-full object-cover" 
+              />
+              {/* Soft feather effect overlay */}
+              <div className="absolute inset-0 shadow-[inset_0_0_50px_30px_#ffffff] pointer-events-none rounded-2xl"></div>
             </motion.div>
           </div>
 

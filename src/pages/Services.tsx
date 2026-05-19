@@ -15,7 +15,7 @@ import ContractorsContent from '../components/services/ContractorsContent';
 import FabricatorsContent from '../components/services/FabricatorsContent';
 
 import devIllustration from '../assets/services/developers_oversight.jpeg';
-import archIllustration from '../assets/services/DD-1.jpg';
+import archIllustration from '../assets/services/DD1.png';
 import contractorIllustration from '../assets/services/contractors_execution.png';
 import fabricatorIllustration from '../assets/services/fabricators_integration.png';
 

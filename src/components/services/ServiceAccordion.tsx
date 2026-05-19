@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { Plus, Minus, ArrowRight } from 'lucide-react';
 
 interface AccordionItem {
   title: string;
@@ -47,9 +47,41 @@ const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
             <div className="px-4 pb-8">
-              <p className="text-lg text-slate-600 leading-relaxed max-w-4xl whitespace-pre-line">
-                {item.content}
-              </p>
+              <div className="text-lg text-slate-600 leading-relaxed max-w-4xl space-y-4">
+                {item.content.split('\n\n').map((paragraph, i) => (
+                  <div key={i}>
+                    {paragraph.split('\n').map((line, j) => {
+                      if (line.trim().startsWith('•')) {
+                        const content = line.replace(/^•\s*/, '');
+                        const colonIndex = content.indexOf(':');
+                        
+                        return (
+                          <div key={j} className="flex items-start gap-3 pl-[10px] mt-2">
+                            <span className="text-primary mt-1 flex-shrink-0">
+                              <ArrowRight size={18} strokeWidth={2.5} />
+                            </span>
+                            <span>
+                              {colonIndex !== -1 ? (
+                                <>
+                                  <span className="font-medium text-slate-800">{content.substring(0, colonIndex + 1)}</span>
+                                  {content.substring(colonIndex + 1)}
+                                </>
+                              ) : (
+                                content
+                              )}
+                            </span>
+                          </div>
+                        );
+                      }
+                      return (
+                        <p key={j} className={j > 0 ? "mt-2" : ""}>
+                          {line}
+                        </p>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         )}
