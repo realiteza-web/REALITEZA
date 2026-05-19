@@ -3,6 +3,26 @@ import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 
+const countryCodes = [
+  { code: '+971', label: 'UAE (+971)' },
+  { code: '+44', label: 'UK (+44)' },
+  { code: '+91', label: 'India (+91)' },
+  { code: '+1', label: 'USA/Canada (+1)' },
+  { code: '+61', label: 'Australia (+61)' },
+  { code: '+49', label: 'Germany (+49)' },
+  { code: '+33', label: 'France (+33)' },
+  { code: '+39', label: 'Italy (+39)' },
+  { code: '+966', label: 'Saudi Arabia (+966)' },
+  { code: '+974', label: 'Qatar (+974)' },
+  { code: '+968', label: 'Oman (+968)' },
+  { code: '+973', label: 'Bahrain (+973)' },
+  { code: '+965', label: 'Kuwait (+965)' },
+  { code: '+65', label: 'Singapore (+65)' },
+  { code: '+60', label: 'Malaysia (+60)' },
+  { code: '+81', label: 'Japan (+81)' },
+  { code: '+86', label: 'China (+86)' },
+];
+
 const Contact = () => {
   const location = useLocation();
 
@@ -35,6 +55,11 @@ const Contact = () => {
     data['access_key'] = 'd076f7dc-d6fb-4720-9b53-4bef2ad8db73';
     data['subject'] = `New Service Enquiry from ${data.fullName} - ${data.company}`;
     data['from_name'] = data.fullName as string;
+
+    // Combine country code and phone
+    data['Phone'] = `${data.countryCode} ${data.phone}`;
+    delete data.countryCode;
+    delete data.phone;
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -218,11 +243,36 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="md:col-span-2 space-y-3">
+                    <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Phone Number</label>
+                    <div className="flex gap-4">
+                      <div className="relative w-1/3 md:w-1/4">
+                        <select name="countryCode" required className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 appearance-none cursor-pointer">
+                          {countryCodes.map(c => (
+                            <option key={c.code} value={c.code}>{c.label}</option>
+                          ))}
+                        </select>
+                        <div className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                          <ArrowRight size={18} className="rotate-90" />
+                        </div>
+                      </div>
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        pattern="^[0-9\-\+\s\(\)]{6,20}$"
+                        title="Please enter a valid phone number"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 flex-grow"
+                        placeholder="e.g. 50 123 4567"
+                      />
+                    </div>
+                  </div>
+                  <div className="md:col-span-2 space-y-3">
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Project Brief & Technical Requirements</label>
                     <textarea
                       rows={3}
                       name="message"
                       required
+                      minLength={10}
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-6 focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/5 outline-none transition-all font-medium text-slate-900 resize-none"
                       placeholder="Tell us about the project scope, location, and specific technical needs..."
                     ></textarea>
