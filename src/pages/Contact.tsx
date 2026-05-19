@@ -49,7 +49,10 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
+    const data: Record<string, any> = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
 
     // Web3Forms configuration
     data['access_key'] = 'd076f7dc-d6fb-4720-9b53-4bef2ad8db73';
