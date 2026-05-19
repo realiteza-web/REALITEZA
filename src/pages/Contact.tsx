@@ -171,7 +171,7 @@ const Contact = () => {
           <div className="max-w-5xl mx-auto">
             <div className="bg-white  overflow-hidden">
               <div className="p-4 md:p-8">
-                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+                <form action="https://formsubmit.co/contact@realiteza.com" method="POST" className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
                   <div className="space-y-3">
                     <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Full Name</label>
                     <input
