@@ -5,8 +5,8 @@ import {
   ArrowRight, ArrowUpRight
 } from 'lucide-react';
 import ServiceAccordion from './ServiceAccordion';
-import fabricationPackageImg from '../../assets/services/fabrication_package.png';
-import siteExecutionImg from '../../assets/services/site_execution.png';
+// import fabricationPackageImg from '../../assets/services/fabrication_package.png';
+// import siteExecutionImg from '../../assets/services/site_execution.png';
 
 // Service Images
 import ucwCurtainwall from '../../assets/services/UCWCurtainwall.webp';
