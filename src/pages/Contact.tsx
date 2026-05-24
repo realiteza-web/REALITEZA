@@ -141,7 +141,7 @@ const Contact = () => {
                 </div>
 
                 <div className="space-y-6 flex-grow">
-                  <p className="text-slate-600 leading-relaxed font-medium">
+                  <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
                     {office.address}
                   </p>
 

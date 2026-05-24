@@ -62,7 +62,7 @@ const FabricatorsContent = () => {
         </div>
 
         <div className="max-w-5xl text-left">
-          <p className="sm:text-xl text-slate-600 leading-relaxed font-normal">
+          <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
             We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub.
           </p>
         </div>
@@ -113,9 +113,10 @@ const FabricatorsContent = () => {
       <div className="py-10 md:py-18 bg-slate-100 ">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="w-full lg:w-1/2 space-y-12">
+            <div className="w-full space-y-12"> 
+              {/* lg:w-1/2  */}
               <div>
-                <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+                <h3 className="sm:text-3xl text-2xl font-normal text-slate-900 mb-6 tracking-tight leading-tight">
                   Fabrication Packages Delivery
                 </h3>
                 <div className="grid grid-cols-1 gap-6">
@@ -131,20 +132,20 @@ const FabricatorsContent = () => {
                       <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">{i + 1}</div>
                       <div>
                         <h4 className="font-bold text-slate-900 uppercase tracking-wide text-sm mb-1">{item.title}</h4>
-                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                        <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
+            {/* <div className="w-full lg:w-1/2">
               <div className="relative">
                 <img src={fabricationPackageImg} alt="Fabrication Packages" className="  relative z-10" />
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-3xl" />
                 <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -152,11 +153,12 @@ const FabricatorsContent = () => {
       {/* Site Execution Section  py-10 md:py-18 */}
       <div className="container mx-auto px-6 md:px-12 lg:px-20 ">
         <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
-          <div className="w-full lg:w-1/2 space-y-8">
-            <h3 className="sm:text-3xl text-2xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+          <div className="w-full space-y-8">
+            {/* lg:w-1/2  */}
+            <h3 className="sm:text-3xl text-2xl font-normal text-slate-900 mb-6 tracking-tight leading-tight">
               Site Execution & Installation Solutions
             </h3>
-            <p className="text-slate-600 mb-8 sm:text-xl  leading-relaxed">
+            <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
               A flawless factory build must translate seamlessly to the construction site. We provide your erection teams with the exact spatial data and sequencing required for rapid, error-free installation.
             </p>
             <div className="space-y-6">
@@ -168,17 +170,17 @@ const FabricatorsContent = () => {
               ].map((item, i) => (
                 <div key={i} className="border-l-2 border-primary/20 pl-6 hover:border-primary transition-colors">
                   <h4 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-1">{item.title}</h4>
-                  <p className="text-slate-500 text-md">{item.desc}</p>
+                  <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">{item.desc}</p>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-1/2">
+          {/* <div className="w-full lg:w-1/2">
             <div className="relative group">
               <img src={siteExecutionImg} alt="Site Execution" className="transition-all duration-700" />
               <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -204,7 +206,7 @@ const FabricatorsContent = () => {
             ].map((service, i) => (
               <div key={i} className="group sm:p-8 p-4 bg-white border border-slate-200 hover:border-primary transition-all duration-300">
                 <h4 className="font-bold uppercase text-sm mb-4">{service.title}</h4>
-                <p className="text-slate-600 transition-colors text-md leading-relaxed">
+                <p className="transition-colors sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
                   {service.content}
                 </p>
               </div>
@@ -218,7 +220,7 @@ const FabricatorsContent = () => {
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="mb-16">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 mb-6  tracking-tight">Our Technical Portfolio</h2>
-            <p className="text-slate-500 sm:text-xl font-normal max-w-5xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
+            <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700 max-w-5xl">Explore our diverse range of engineering solutions and technical documentation for facade fabricators.</p>
           </div>
 
           {/* Desktop View (>= 1024px): Interactive Slideshow */}

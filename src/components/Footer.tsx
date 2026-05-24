@@ -14,7 +14,7 @@ const Footer = () => {
             <Link to="/" className="inline-block">
               <img src={logoImg} alt="REALITEZA Logo" className="h-12 w-auto object-contain" />
             </Link>
-            <p className="text-sm leading-relaxed max-w-md">
+            <p className="text-sm text-slate-300 leading-relaxed max-w-md">
               REALITEZA delivers specialized building envelope engineering for complex projects worldwide through rigorous structural analysis, fabrication-ready shop drawings, and agile digital coordination. Operating across regional business hours, we provide technically precise, workability-focused façade engineering solutions with seamless global collaboration.
             </p>
             <div className="flex items-center gap-4">
@@ -88,8 +88,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-          <p>© {currentYear} REALITEZA Building Envelope Engineering Service – All Rights Reserved.</p>
-          <p>Developer: REALITEZA BEES PVT LTD, Cochin, India.</p>
+          <p className='text-sm text-slate-300'>© {currentYear} REALITEZA Building Envelope Engineering Service – All Rights Reserved.</p>
+          <p className='text-sm text-slate-300'>Developer: REALITEZA BEES PVT LTD, Cochin, India.</p>
         </div>
       </div>
     </footer>

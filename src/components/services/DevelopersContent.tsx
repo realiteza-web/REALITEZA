@@ -31,7 +31,7 @@ const DevelopersContent = () => {
       </div>
 
       <div className="max-w-5xl text-left">
-        <p className="sm:text-xl text-slate-600 leading-relaxed font-normal">
+        <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
           We safeguard your investment by ensuring architectural visions translate into structurally sound, cost-effective realities. We provide critical engineering oversight to mitigate risks, optimize budgets, and guarantee long-term asset performance.
         </p>
       </div>

@@ -114,7 +114,7 @@ const ContractorsContent = () => {
               className="space-y-12"
             >
               <div className="max-w-5xl text-left mt-2">
-                <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-normal">
+                <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
                   As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination between the primary structure and the facade, eliminating installation delays, and guaranteeing strict quality control.
                 </p>
               </div>
@@ -132,7 +132,7 @@ const ContractorsContent = () => {
               className="space-y-12"
             >
               <div className="max-w-5xl text-left mt-2">
-                <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-normal">
+                <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
                   Ensuring financial predictability and absolute structural integrity through exact BIM-integrated engineering and certified connection design.
                 </p>
               </div>

@@ -20,14 +20,14 @@ const About = () => {
               {/* <h2 className="mb-8 leading-tight">
                 <span className="text-2xl md:text-4xl lg:text-5xl font-black block text-slate-900 tracking-tight">Company Overview</span>
               </h2> */}
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
                 REALITEZA (Limitted) incorporated with the desire to offer an incomparable service in our industry. As part of our vision, aiming to be known as a reputed firm offering Building Envelope Engineering Service across the world remotely-efficiently, we engaged to leverage the remote design support/engineering back office for fabrication companies and architects.
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
                 The founders decided to begin the REALITEZA for offering entire engineering service for a Project’s envelop system related scope instead of a specific element like (only) the alum & glazing façade. The entire process is led by enthusiastic and enterprising highly experienced façade experts. This ensures less effort for our clients who take over the entire envelope scope of a building and outsource the design & engineering part ranging from concept to as built stage.
               </p>
 
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
               We work hand in hand with our clients for producing the design & engineering submissions of various trade / disciplines in the contract like all kind of Aluminium & glazing façades and bespoke systems, Stone and metal cladding facades, Temporary wall, rainscreen & SFS system, Steel Roofing structure and roof cladding designs, and all types of stainless steel and metal works scenarios and canopies.
             </p>
             </div>
@@ -57,8 +57,8 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-xl font-medium text-slate-900 tracking-tight">Our Mission</h2>
-              <p className="sm:text-xl text-lg leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
+              <h2 className="font-bold text-slate-900 mb-4 uppercase tracking-tight text-sm md:text-base">Our Mission</h2>
+              <p className="sm:text-xl text-lg leading-relaxed text-slate-700 font-medium border-l-4 border-primary pl-6">
                 "To be the leader and our clients' most preferable choice in providing engineering design service."
               </p>
             </motion.div>
@@ -71,8 +71,8 @@ const About = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-xl font-medium text-slate-900 tracking-tight">Our Vision</h2>
-              <p className="sm:text-xl text-lg leading-relaxed text-slate-600 font-medium border-l-4 border-primary pl-6">
+              <h2 className="font-bold text-slate-900 mb-4 uppercase tracking-tight text-sm md:text-base">Our Vision</h2>
+              <p className="sm:text-xl text-lg leading-relaxed text-slate-700 font-medium border-l-4 border-primary pl-6">
                 "We are committed to maintaining high-quality drawing standards and high-end engineered building envelope solutions."
               </p>
             </motion.div>

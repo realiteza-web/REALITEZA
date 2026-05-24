@@ -31,7 +31,7 @@ const ArchitectsContent = () => {
       </div>
 
       <div className="max-w-5xl text-left">
-        <p className="sm:text-xl text-md text-slate-600 leading-relaxed font-normal">
+        <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
           We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective.
         </p>
       </div>

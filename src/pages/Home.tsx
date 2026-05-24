@@ -68,7 +68,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-lg font-medium leading-relaxed text-slate-700 mb-6"
+                className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700 mb-6"
               >
                 REALITEZA Building Envelope Engineering Services provides specialized design and engineering support for building envelope systems, façade detailing, BIM modeling, fabrication drawings, and structural design support for clients across the world.
               </motion.p>
@@ -103,10 +103,10 @@ const Home = () => {
               viewport={{ once: true }}
               className="sm:mb-6 mb-4 leading-tight"
             >
-              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight">
+              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight text-left md:text-center ">
                 Why Choose REALITEZA
               </span>
-              <p className='mt-6 text-lg font-normal max-w-5xl mx-auto text-slate-600 leading-relaxed text-center'>
+              <p className='mt-6  max-w-5xl mx-auto  sm:text-lg text-sm font-medium leading-relaxed text-slate-700 text-left md:text-center'>
                 A True Dedicated Partner
                 We don't just execute drafting tasks; we take complete ownership of the facade package. By integrating seamlessly with your team from day one, we act as your dedicated technical arm, fiercely protecting your vision, budget, and timeline.
               </p>
@@ -141,7 +141,7 @@ const Home = () => {
                 className="bg-white p-4 sm:p-6 border border-slate-200"
               >
                 <h3 className="font-bold text-slate-900 mb-4 uppercase tracking-tight text-sm md:text-base">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-md md:text-lg">{item.description}</p>
+                <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">{item.description}</p>
               </motion.div>
             ))}
           </div>

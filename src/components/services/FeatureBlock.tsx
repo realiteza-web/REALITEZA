@@ -13,7 +13,7 @@ const FeatureBlock = ({ title, content, icon: Icon }: FeatureBlockProps) => (
         <Icon size={24} />
       </div>
     )}
-    <p className="text-slate-800 text-base leading-relaxed">
+    <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
       <strong className="text-slate-900 font-bold block text-lg mb-2 uppercase tracking-tight">{title}:</strong>
       {content}
     </p>

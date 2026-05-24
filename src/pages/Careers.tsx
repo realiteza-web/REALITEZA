@@ -27,12 +27,12 @@ const Careers = () => {
                 Join Our Team
               </h2>
               
-              <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed mb-12">
+              <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 mb-12">
                 REALITEZA is always looking for exceptional experts to join our global team.
               </p>
 
               <div className="pt-5 ">
-                <p className="text-md font-medium text-slate-800  mb-4">
+                <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 mb-4">
                   Submit your CV & Portfolio for Consideration
                 </p>
                 <a 

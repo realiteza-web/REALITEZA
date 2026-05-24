@@ -89,7 +89,7 @@ const Header = () => {
                 src={currentLogo}
                 alt="REALITEZA Logo"
                 className={`w-auto object-contain transition-all duration-500 ${
-                  isScrolled || location.pathname !== '/' ? 'h-12 md:h-14' : 'h-14 md:h-16'
+                  isScrolled || location.pathname !== '/' ? 'h-10 md:h-14' : 'h-12 md:h-16'
                   }`}
               />
             </Link>
