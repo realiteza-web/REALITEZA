@@ -6,8 +6,9 @@ import client4 from '../assets/clients/client (4).jpg';
 import client5 from '../assets/clients/client (5).jpg';
 import client6 from '../assets/clients/clients (6).jpeg';
 import client7 from '../assets/clients/clients (7).jpeg';
+import client8 from '../assets/clients/clients (8).jpg';
 
-const clients = [client1, client2, client3, client4, client5, client6, client7];
+const clients = [client1, client2, client3, client4, client5, client6, client7, client8];
 const ClientSlider: React.FC = () => {
   return (
     <section className=" bg-slate-100 sm:py-10 py-8">
@@ -18,9 +19,9 @@ const ClientSlider: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px border border-slate-200 overflow-hidden">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-px border border-slate-200 overflow-hidden">
           {clients.map((clientImg, i) => (
-            <div key={i} className="bg-white aspect-[3/2] flex items-center justify-center p-3 group hover:bg-slate-50 transition-colors duration-500">
+            <div key={i} className="bg-white aspect-[3/2] flex items-center justify-center p-2 group hover:bg-slate-50 transition-colors duration-500">
               <img
                 src={clientImg}
                 alt={`Client ${i + 1}`}
