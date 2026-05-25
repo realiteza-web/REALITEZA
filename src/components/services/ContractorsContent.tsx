@@ -115,7 +115,7 @@ const ContractorsContent = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mt-2">
                 <div className="text-left flex-1">
-                  <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 max-w-4xl">
+                  <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700 max-w-4xl">
                     As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination between the primary structure and the facade, eliminating installation delays, and guaranteeing strict quality control.
                   </p>
                 </div>
@@ -140,12 +140,12 @@ const ContractorsContent = () => {
             >
               <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mt-2">
                 <div className="text-left flex-1">
-                  <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 max-w-4xl">
+                  <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700 max-w-4xl">
                     Ensuring financial predictability and absolute structural integrity through exact BIM-integrated engineering and certified connection design.
                   </p>
                 </div>
                 <div className="flex justify-start lg:justify-end shrink-0">
-                  <Link to="/contact#enquiry-form" className="group inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-md border border-slate-700 hover:bg-primary hover:text-white hover:border-primary rounded-[60px] px-6 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                  <Link to="/contact#enquiry-form" className="group inline-flex items-center gap-2 text-primary font-bold uppercase tracking-tight text-md border border-slate-700 hover:bg-primary hover:text-white hover:border-primary rounded-[60px] px-6 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                     ENGAGE TECHNICAL OVERSIGHT <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>

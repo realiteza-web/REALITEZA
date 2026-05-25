@@ -47,7 +47,7 @@ const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
           >
             <div className="px-4 pb-8">
-              <div className="text-lg text-white leading-relaxed space-y-4">
+              <div className="text-sm sm:text-lg font-medium text-white leading-relaxed space-y-4">
                 {item.content.split('\n\n').map((paragraph, i) => (
                   <div key={i}>
                     {paragraph.split('\n').map((line, j) => {
