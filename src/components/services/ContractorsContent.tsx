@@ -120,8 +120,8 @@ const ContractorsContent = () => {
                   </p>
                 </div>
                 <div className="flex justify-start lg:justify-end shrink-0">
-                  <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
-                    ENGAGE TECHNICAL OVERSIGHT <ArrowRight />
+                  <Link to="/contact#enquiry-form" className="group inline-flex items-center gap-2 text-primary font-bold uppercase tracking-tight text-md border border-slate-700 hover:bg-primary hover:text-white hover:border-primary rounded-[60px] px-6 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    ENGAGE TECHNICAL OVERSIGHT <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -145,8 +145,8 @@ const ContractorsContent = () => {
                   </p>
                 </div>
                 <div className="flex justify-start lg:justify-end shrink-0">
-                  <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
-                    ENGAGE TECHNICAL OVERSIGHT <ArrowRight />
+                  <Link to="/contact#enquiry-form" className="group inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-md border border-slate-700 hover:bg-primary hover:text-white hover:border-primary rounded-[60px] px-6 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    ENGAGE TECHNICAL OVERSIGHT <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
