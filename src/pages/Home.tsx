@@ -1,22 +1,33 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import logoabout from '../assets/aboutrealiteza.png';
+import heroFallback from '../assets/realiteza.jpg';
 
 const Home = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center">
         {/* Vimeo Video Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
+          <img 
+            src={heroFallback} 
+            alt="Realiteza Hero Background" 
+            className="absolute inset-0 w-full h-full object-cover z-0" 
+          />
           <iframe
             src="https://player.vimeo.com/video/887301734?h=3e6a7509d0&background=1&autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&controls=0&dnt=1"
-            className="absolute top-1/2 left-1/2 min-w-[177.77vh] min-h-screen w-[100vw] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            className={`absolute top-1/2 left-1/2 min-w-[177.77vh] min-h-screen w-[100vw] h-[56.25vw] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-10 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
+            loading="lazy"
+            onLoad={() => setIsVideoLoaded(true)}
           ></iframe>
           {/* Warmer Multiply Overlay */}
           <div className="absolute inset-0 bg-slate-900/40 mix-blend-multiply" />
