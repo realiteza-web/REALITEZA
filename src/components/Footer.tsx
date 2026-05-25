@@ -89,7 +89,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <p className='text-sm text-slate-300'>© {currentYear} REALITEZA Building Envelope Engineering Service.</p>
-          <p className='text-sm text-slate-300'>All Rights Reserved.</p>
+          <p className='text-sm text-slate-300 text-left sm:text-right'>All Rights Reserved.</p>
         </div>
       </div>
     </footer>
