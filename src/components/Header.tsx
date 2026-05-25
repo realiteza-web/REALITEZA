@@ -121,18 +121,18 @@ const Header = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 z-[105] bg-primary flex flex-col justify-center overflow-y-auto overflow-x-hidden pt-24 pb-12"
+            className="fixed inset-0 z-[105] bg-primary flex flex-col justify-center overflow-y-auto overflow-x-hidden pb-24 pt-32"
           >
 
             <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-              <div className="max-w-2xl mx-auto flex flex-col items-center gap-10">
+              <div className="flex flex-col items-start gap-10">
                 {/* Navigation Items */}
-                <div className="flex flex-col gap-10 items-start w-fit">
+                <div className="flex flex-col gap-10 items-start">
                   {navLinks.map((link) => (
                     <motion.div key={link.name} variants={itemVariants}>
                       <Link
                         to={link.path}
-                        className={`text-4xl md:text-5xl lg:text-6xl font-semibold transition-all duration-300 uppercase tracking-tight text-left block ${location.pathname === link.path ? 'text-white' : 'text-white/80 hover:text-white'
+                        className={`text-3xl md:text-4xl lg:text-5xl font-semibold transition-all duration-300 uppercase tracking-tight text-left block ${location.pathname === link.path ? 'text-white' : 'text-white/80 hover:text-white'
                           }`}
                         onClick={() => setIsOpen(false)}
                       >

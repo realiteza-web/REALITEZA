@@ -26,9 +26,9 @@ const EndClientSlider: React.FC = () => {
   return (
     <section className="sm:py-10 py-8 overflow-hidden ">
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mb-8">
-        <div className="sm:text-center  max-w-3xl mx-auto">
+        <div className="text-left">
           
-          <h2 className="text-2xl  font-medium text-slate-900 tracking-tight mb-6">
+          <h2 className="text-2xl font-medium text-slate-900 tracking-tight mb-6">
             End Clients & Associated Projects
           </h2>
           
@@ -38,14 +38,23 @@ const EndClientSlider: React.FC = () => {
       {/* Infinite Scroll Slider */}
       <div className="relative">
         <div 
-          className="flex sm:space-x-4 space-x-2 whitespace-nowrap animate-infinite-scroll-tripled py-2 items-center will-change-transform hover:[animation-play-state:paused]" 
-          style={{ animationDuration: isMobile ? '5s' : '12s' }}
+          className="flex w-max animate-infinite-scroll py-2 will-change-transform hover:[animation-play-state:paused]" 
+          style={{ animationDuration: isMobile ? '15s' : '30s' }}
         >
-          {[...endClients, ...endClients, ...endClients].map((clientImg, i) => (
-            <div key={i} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-200 flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-md group p-2">
-              <img src={clientImg} alt={`End Client ${i + 1}`} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
-            </div>
-          ))}
+          <div className="flex w-max sm:gap-4 gap-2 pr-2 sm:pr-4">
+            {endClients.map((clientImg, i) => (
+              <div key={`a-${i}`} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-200 flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-md group p-2">
+                <img src={clientImg} alt={`End Client ${i + 1}`} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
+              </div>
+            ))}
+          </div>
+          <div className="flex w-max sm:gap-4 gap-2 pr-2 sm:pr-4" aria-hidden="true">
+            {endClients.map((clientImg, i) => (
+              <div key={`b-${i}`} className="flex-shrink-0 sm:w-48 w-32 sm:h-24 h-16 bg-white border border-slate-200 flex items-center justify-center overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-md group p-2">
+                <img src={clientImg} alt={`End Client ${i + 1}`} className="w-full h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105" />
+              </div>
+            ))}
+          </div>
         </div>
         
         {/* Faded edges */}
@@ -55,12 +64,12 @@ const EndClientSlider: React.FC = () => {
       
       <style dangerouslySetInnerHTML={{
         __html: `
-        @keyframes infinite-scroll-tripled {
+        @keyframes infinite-scroll {
           from { transform: translateX(0); }
-          to { transform: translateX(-33.333%); }
+          to { transform: translateX(-50%); }
         }
-        .animate-infinite-scroll-tripled {
-          animation: infinite-scroll-tripled linear infinite;
+        .animate-infinite-scroll {
+          animation: infinite-scroll linear infinite;
         }
       `}} />
     </section>

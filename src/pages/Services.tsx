@@ -147,16 +147,22 @@ const Services = () => {
             {/* Right Column: Image */}
             <div className="relative flex justify-center lg:justify-end h-[300px] md:h-[400px]">
               <AnimatePresence mode="wait">
-                <motion.img
+                <motion.div
                   key={activeTab}
-                  src={audiences.find(a => a.id === activeTab)?.image}
-                  alt="Service Illustration"
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
-                  className="w-full h-full max-w-lg object-contain"
-                />
+                  className="relative w-full h-full max-w-lg rounded-2xl overflow-hidden"
+                >
+                  <img
+                    src={audiences.find(a => a.id === activeTab)?.image}
+                    alt="Service Illustration"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Soft feather effect overlay matching the slate-100 background */}
+                  <div className="absolute inset-0 shadow-[inset_0_0_20px_20px_#f1f5f9] pointer-events-none rounded-2xl"></div>
+                </motion.div>
               </AnimatePresence>
             </div>
           </div>

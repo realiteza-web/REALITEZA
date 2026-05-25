@@ -74,7 +74,7 @@ const ServiceAccordion = ({ items }: ServiceAccordionProps) => {
                         );
                       }
                       return (
-                        <p key={j} className={`${j > 0 ? "mt-2" : ""} w-full sm:text-lg text-sm font-medium leading-relaxed text-white transition-colors duration-300`}>
+                        <p key={j} className={`${j > 0 ? "mt-2" : ""} max-w-5xl sm:text-lg text-sm font-medium leading-relaxed text-white transition-colors duration-300`}>
                           {line}
                         </p>
                       );

@@ -113,10 +113,17 @@ const ContractorsContent = () => {
               transition={{ duration: 0.4 }}
               className="space-y-12"
             >
-              <div className="max-w-5xl text-left mt-2">
-                <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
-                  As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination between the primary structure and the facade, eliminating installation delays, and guaranteeing strict quality control.
-                </p>
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mt-2">
+                <div className="text-left flex-1">
+                  <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 max-w-4xl">
+                    As your dedicated facade engineering partner, we protect your critical path by managing the highest-risk structural and envelope packages on your project. We provide comprehensive end-to-end technical oversight, ensuring seamless coordination between the primary structure and the facade, eliminating installation delays, and guaranteeing strict quality control.
+                  </p>
+                </div>
+                <div className="flex justify-start lg:justify-end shrink-0">
+                  <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
+                    ENGAGE TECHNICAL OVERSIGHT <ArrowRight />
+                  </Link>
+                </div>
               </div>
               <ServiceAccordion items={facadeServices} />
             </motion.div>
@@ -131,10 +138,17 @@ const ContractorsContent = () => {
               transition={{ duration: 0.4 }}
               className="space-y-12"
             >
-              <div className="max-w-5xl text-left mt-2">
-                <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
-                  Ensuring financial predictability and absolute structural integrity through exact BIM-integrated engineering and certified connection design.
-                </p>
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mt-2">
+                <div className="text-left flex-1">
+                  <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 max-w-4xl">
+                    Ensuring financial predictability and absolute structural integrity through exact BIM-integrated engineering and certified connection design.
+                  </p>
+                </div>
+                <div className="flex justify-start lg:justify-end shrink-0">
+                  <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
+                    ENGAGE TECHNICAL OVERSIGHT <ArrowRight />
+                  </Link>
+                </div>
               </div>
               <ServiceAccordion items={structuralServices} />
             </motion.div>
@@ -142,11 +156,7 @@ const ContractorsContent = () => {
         </AnimatePresence>
       </div>
 
-      <div className="flex justify-center mt-12 mb-8">
-        <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold">
-          ENGAGE TECHNICAL OVERSIGHT <ArrowRight />
-        </Link>
-      </div>
+
     </div>
   );
 };

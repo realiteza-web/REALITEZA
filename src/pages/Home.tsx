@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight} from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import logoabout from '../assets/aboutrealiteza.png';
@@ -39,7 +39,7 @@ const Home = () => {
               </span>
             </h1>
 
-        
+
           </motion.div>
         </div>
       </section>
@@ -47,7 +47,7 @@ const Home = () => {
       {/* Intro Section */}
       <section className="py-16 md:py-28 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
-         
+
 
           {/* 2-Column Content Below */}
           <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20 max-w-6xl mx-auto">
@@ -62,7 +62,7 @@ const Home = () => {
             </motion.div>
 
             {/* Content Column */}
-            <div className="flex-1 max-w-2xl">
+            <div className="flex-1 max-w-3xl">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="flex justify-end"
+                className="flex justify-start"
               >
                 <Link to="/services" className="btn-primary">
                   View All Services <ArrowRight size={22} />
@@ -89,24 +89,24 @@ const Home = () => {
       </section>
 
 
-     
+
 
 
 
       {/* Why Choose Us */}
       <section className="pb-16 md:pb-28  relative">
         <div className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-          <div className="text-center sm:mb-20 mb-10">
+          <div className="text-left mb-10">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="sm:mb-6 mb-4 leading-tight"
             >
-              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight text-left md:text-center ">
+              <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight text-left ">
                 Why Choose REALITEZA
               </span>
-              <p className='mt-6  max-w-5xl mx-auto  sm:text-lg text-sm font-medium leading-relaxed text-slate-700 text-left md:text-center'>
+              <p className='mt-6 max-w-6xl sm:text-lg text-sm font-medium leading-relaxed text-slate-700 text-left '>
                 A True Dedicated Partner
                 We don't just execute drafting tasks; we take complete ownership of the facade package. By integrating seamlessly with your team from day one, we act as your dedicated technical arm, fiercely protecting your vision, budget, and timeline.
               </p>

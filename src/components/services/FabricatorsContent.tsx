@@ -61,10 +61,17 @@ const FabricatorsContent = () => {
           </h2>
         </div>
 
-        <div className="max-w-5xl text-left">
-          <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
-            We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub.
-          </p>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div className="text-left flex-1">
+            <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700 max-w-4xl">
+              We drive factory-floor efficiency by translating approved shop drawings into exact, zero-error manufacturing data. From tender estimation to site execution, we are your technical integration hub.
+            </p>
+          </div>
+          <div className="flex justify-start lg:justify-end shrink-0">
+            <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
+              GET ONE-POINT SUPPORT <ArrowRight />
+            </Link>
+          </div>
         </div>
 
         <div>
@@ -161,16 +168,19 @@ const FabricatorsContent = () => {
             <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
               A flawless factory build must translate seamlessly to the construction site. We provide your erection teams with the exact spatial data and sequencing required for rapid, error-free installation.
             </p>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
               {[
                 { title: "Site Survey & Tolerance Integration", desc: "We import physical site survey reports directly into our models to accommodate real-world structural deviations." },
                 { title: "Coordinate & Bracket Setting-Out", desc: "Providing precise global coordinate points and detailed bracket installation drawings to guarantee perfect grid alignment." },
                 { title: "Installation Sequencing", desc: "Providing step-by-step erection methodologies and site-specific tagging maps to accelerate installation." },
                 { title: "As-Built Documentation", desc: "Generating comprehensive final as-built drawings reflecting exact site conditions to guarantee smooth project closeout." }
               ].map((item, i) => (
-                <div key={i} className="border-l-2 border-primary/20 pl-6 hover:border-primary transition-colors">
-                  <h4 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-1">{item.title}</h4>
-                  <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">{item.desc}</p>
+                <div key={i} className="flex gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">{i + 1}</div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 uppercase tracking-wide text-sm mb-1">{item.title}</h4>
+                    <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -188,7 +198,7 @@ const FabricatorsContent = () => {
       <section className="py-10 md:py-18 bg-slate-100 overflow-hidden relative">
         <div className="container mx-auto px-6 md:px-10 lg:px-20 relative z-10">
           <div className="text-center md:mb-16 mb-8">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tighter">Services</h2>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-normal text-slate-900 tracking-tighter text-left">Get one point support</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -339,13 +349,7 @@ const FabricatorsContent = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-1">
-        <div className="flex justify-center">
-          <Link to="/contact#enquiry-form" className="btn-primary  text-md font-bold">
-            GET ONE-POINT SUPPORT <ArrowRight />
-          </Link>
-        </div>
-      </div>
+
     </div>
   );
 };

@@ -57,7 +57,7 @@ const Careers = () => {
                 className="absolute inset-0 w-full h-full object-cover" 
               />
               {/* Soft feather effect overlay */}
-              <div className="absolute inset-0 shadow-[inset_0_0_50px_30px_#ffffff] pointer-events-none rounded-2xl"></div>
+              <div className="absolute inset-0 shadow-[inset_0_0_10px_10px_#ffffff] pointer-events-none rounded-2xl"></div>
             </motion.div>
           </div>
 

@@ -29,22 +29,26 @@ const DevelopersContent = () => {
           <span className="text-2xl md:text-4xl lg:text-5xl font-normal block text-slate-900 tracking-tight">Services to Developers</span>
         </h2>
       </div>
+      
 
-      <div className="max-w-5xl text-left">
-        <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700">
-          We safeguard your investment by ensuring architectural visions translate into structurally sound, cost-effective realities. We provide critical engineering oversight to mitigate risks, optimize budgets, and guarantee long-term asset performance.
-        </p>
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div className=" text-left flex-1">
+          <p className="sm:text-lg text-sm font-medium leading-relaxed text-slate-700 max-w-4xl">
+            We safeguard your investment by ensuring architectural visions translate into structurally sound, cost-effective realities. We provide critical engineering oversight to mitigate risks, optimize budgets, and guarantee long-term asset performance.
+          </p>
+        </div>
+        <div className="flex justify-start lg:justify-end shrink-0">
+          <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
+            Engage Engineering Oversight<ArrowRight />
+          </Link>
+        </div>
       </div>
 
       <div>
         <ServiceAccordion items={developersServices} />
       </div>
 
-      <div className="flex justify-center">
-        <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold">
-          Engage Engineering Oversight<ArrowRight />
-        </Link>
-      </div>
+      
     </div>
   );
 };

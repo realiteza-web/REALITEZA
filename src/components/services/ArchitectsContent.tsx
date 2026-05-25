@@ -30,21 +30,24 @@ const ArchitectsContent = () => {
         </h2>
       </div>
 
-      <div className="max-w-5xl text-left">
-        <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
-          We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective.
-        </p>
+      <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+        <div className="text-left flex-1">
+          <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700 max-w-4xl">
+            We serve as the technical bridge between your architectural vision and structural reality. By integrating with your team early in the design phase, REALITEZA provides the specialized engineering and visual data required to ensure your concepts are buildable, compliant, and cost-effective.
+          </p>
+        </div>
+        <div className="flex justify-start lg:justify-end shrink-0">
+          <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold border border-slate-700 rounded-[60px] px-6 py-3">
+            REQUEST A SCHEMATIC PROPOSAL <ArrowRight />
+          </Link>
+        </div>
       </div>
 
       <div>
         <ServiceAccordion items={architectsServices} />
       </div>
 
-      <div className="flex justify-center pt-8">
-        <Link to="/contact#enquiry-form" className="btn-primary text-md font-bold">
-          REQUEST A SCHEMATIC PROPOSAL <ArrowRight />
-        </Link>
-      </div>
+
     </div>
   );
 };
