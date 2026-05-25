@@ -250,7 +250,7 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="md:col-span-2 space-y-3">
-                    <label className="text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Project Brief & Technical Requirements</label>
+                    <label className="block text-xs font-bold text-slate-600 uppercase tracking-widest ml-1">Project Brief & Technical Requirements</label>
                     <textarea
                       rows={3}
                       name="message"
@@ -258,7 +258,7 @@ const Contact = () => {
                       placeholder="Tell us about the project scope, location, and specific technical needs..."
                     ></textarea>
                   </div>
-                  <div className="md:col-span-2 flex flex-col items-start gap-4 pt-4">
+                  <div className="md:col-span-2 flex flex-col items-start gap-4 pb-1 md:pb-0 md:pt-4">
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
