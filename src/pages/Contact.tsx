@@ -115,7 +115,7 @@ const Contact = () => {
                 <h3 className="text-xl font-bold text-slate-900 leading-tight">Location Address</h3>
               </div>
               <div className="space-y-3 flex-grow">
-                <p className="text-xs uppercase tracking-wider font-bold text-primary">Engineering Operations</p>
+                <p className="text-xs uppercase tracking-wider font-bold text-primary">Registered Office</p>
                 <p className="text-slate-700 font-medium leading-relaxed">
                   37/1993, 8th Floor, Infrafutura Building, Kakkanad, Thrikkakara, Cochin – 682021
                 </p>
