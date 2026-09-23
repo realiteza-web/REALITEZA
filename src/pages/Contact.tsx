@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
 
 const countryCodes = [
+  { code: '+91', label: 'India (+91)' },
   { code: '+971', label: 'UAE (+971)' },
   { code: '+44', label: 'UK (+44)' },
-  { code: '+91', label: 'India (+91)' },
   { code: '+1', label: 'USA/Canada (+1)' },
   { code: '+61', label: 'Australia (+61)' },
   { code: '+49', label: 'Germany (+49)' },
@@ -87,33 +87,9 @@ const Contact = () => {
     }
   };
 
-  const offices = [
-    {
-      title: 'Engineering Operations – Cochin, India',
-      address: '37/1993, 8th Floor, Infrafutura Building, Kakkanad, Thrikkakara, Cochin – 682021',
-      email: 'contact@realiteza.com',
-      phone: '+91 9447460468',
-      hours: '09:00 AM – 06:00 PM (Closed on Public Holidays)'
-    },
-    {
-      title: 'Marketing – Europe, UK',
-      address: '21 Barland Way, Aylesbury, Buckinghamshire, England, HP18 0UZ',
-      email: 'contact@realiteza.com',
-      phone: '+44 7424 652074',
-      hours: null
-    },
-    {
-      title: 'Marketing – United Arab Emirates, Dubai',
-      address: 'United Arab Emirates Street 13, Melhoof 6, Flat 101, Al Warqa, Dubai',
-      email: 'contact@realiteza.com',
-      phone: '+971 509 261691',
-      hours: null
-    }
-  ];
-
   return (
     <div>
-      {/* Global Offices Grid */}
+      {/* Global Offices Grid - Restructured into 3 Columns */}
       <section className="pt-24 md:pt-32 pb-16 md:pb-28 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <motion.h1
@@ -124,43 +100,81 @@ const Contact = () => {
             Contact Us
           </motion.h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {offices.map((office, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white px-2 py-6 md:p-10 border border-slate-200 shadow-sm flex flex-col h-full"
-              >
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center rounded-xl">
-                    <MapPin size={24} />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 leading-tight">{office.title}</h3>
+            {/* Column 1: Location Address */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col h-full hover:border-primary/30 transition-all"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center rounded-xl shrink-0">
+                  <MapPin size={24} />
                 </div>
+                <h3 className="text-xl font-bold text-slate-900 leading-tight">Location Address</h3>
+              </div>
+              <div className="space-y-3 flex-grow">
+                <p className="text-xs uppercase tracking-wider font-bold text-primary">Engineering Operations</p>
+                <p className="text-slate-700 font-medium leading-relaxed">
+                  37/1993, 8th Floor, Infrafutura Building, Kakkanad, Thrikkakara, Cochin – 682021
+                </p>
+              </div>
+            </motion.div>
 
-                <div className="space-y-6 flex-grow">
-                  <p className="sm:text-lg text-md font-medium leading-relaxed text-slate-700">
-                    {office.address}
-                  </p>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3 text-slate-900 font-bold">
-                      <Mail size={16} className="text-primary" />
-                      <a href={`mailto:${office.email}`} className="hover:text-primary transition-colors">{office.email}</a>
-                    </div>
-                    {office.phone && (
-                      <div className="flex items-center gap-3 text-slate-900 font-bold">
-                        <Phone size={16} className="text-primary" />
-                        <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="hover:text-primary transition-colors">{office.phone}</a>
-                      </div>
-                    )}
-                  
-                  </div>
+            {/* Column 2: Contact Number */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col h-full hover:border-primary/30 transition-all"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center rounded-xl shrink-0">
+                  <Phone size={24} />
                 </div>
-              </motion.div>
-            ))}
+                <h3 className="text-xl font-bold text-slate-900 leading-tight">Contact Number</h3>
+              </div>
+              <div className="space-y-3 flex-grow">
+                <a
+                  href="tel:+919447460468"
+                  className="text-lg font-bold text-slate-900 hover:text-primary transition-colors block"
+                >
+                  +91 9447460468
+                </a>
+                <p className="text-sm text-slate-500 font-medium">
+                  09:00 AM – 06:00 PM<br />(Closed on Public Holidays)
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Column 3: Email ID */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white p-8 md:p-10 border border-slate-200 shadow-sm flex flex-col h-full hover:border-primary/30 transition-all"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center rounded-xl shrink-0">
+                  <Mail size={24} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 leading-tight">Email ID</h3>
+              </div>
+              <div className="space-y-3 flex-grow">
+                <a
+                  href="mailto:contact@realiteza.com"
+                  className="text-lg font-bold text-slate-900 hover:text-primary transition-colors block break-all"
+                >
+                  contact@realiteza.com
+                </a>
+                <p className="text-sm text-slate-500 font-medium">
+                  Send us your technical enquiries or project briefs anytime.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
